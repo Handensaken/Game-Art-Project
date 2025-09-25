@@ -13,9 +13,11 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]
     [Tooltip("Adjust the speed at which the player is able to run (Default: 10)")]
     private float _runSpeed;
-    [SerializeField] [Tooltip("Adjust the sprinting speed (Default: 15)")]
+    [SerializeField]
+    [Tooltip("Adjust the sprinting speed (Default: 15)")]
     private float _sprintSpeed;
-    [SerializeField][Tooltip("Adjust the sneaking speed (Default: 5)")]
+    [SerializeField]
+    [Tooltip("Adjust the sneaking speed (Default: 5)")]
     private float _sneakSpeed;
 
     private float activeSpeed;
@@ -30,6 +32,9 @@ public class PlayerMovementScript : MonoBehaviour
     [Tooltip("The time, in seconds, it takes for the player to come to a stop (Default: 0.2)")]
     private float _stopInterpolationSpeed = 0.2f;
     private Vector2 _movementDir;
+    [SerializeField]
+    private Animator animCTRL;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,7 +52,7 @@ public class PlayerMovementScript : MonoBehaviour
         //Set up the true input movement
         Vector3 TrueMovement = movementVector.normalized * activeSpeed * Time.deltaTime;
         //Map the movement as interpolation between zero and the true movement. 
-        Vector3 ActiveMovement = Vector3.Lerp(TrueMovement * 0, TrueMovement, lerpT);
+        Vector3 ActiveMovement = Vector3.Lerp(Vector3.zero, TrueMovement, lerpT);
 
         //Move the character's transform in world space
         transform.Translate(ActiveMovement, Space.World);
@@ -58,21 +63,31 @@ public class PlayerMovementScript : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
+        float f = Mathf.Clamp(ActiveMovement.magnitude * 100 / 2.4f, 0, 1);
         //sprinting behaviour
-        if (ActiveMovement.magnitude > 0.04f)
+        if (f >= 0.9f)
         {
+            //   Debug.Log("Sprinting");
             sprintT += Time.deltaTime;
             if (sprintT > 5)
             {
                 activeSpeed = _sprintSpeed;
+                animCTRL.SetBool("Sprint", true);
             }
         }
         else if (activeSpeed == _sprintSpeed)
         {
+            animCTRL.SetBool("Sprint", false);
+
             sprintT = 0;
             activeSpeed = _runSpeed;
         }
+        if (f < 0.5f)
+        {
+            sprintT = 0;
+            animCTRL.SetBool("Sprint", false);
+        }
+        animCTRL.SetFloat("Blend", f);
     }
 
     //Interpolation coroutine. Don't touch 
@@ -85,7 +100,6 @@ public class PlayerMovementScript : MonoBehaviour
                 yield return new WaitForSeconds(totalTime / 10);
                 lerpT += 0.1f;
             }
-
         }
         else
         {
@@ -104,6 +118,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             sprintT = 0;
             activeSpeed = _sneakSpeed;
+            animCTRL.SetBool("Sprint", false);
             Debug.Log("Sneaky Snitch bip bop");
         }
         else if (context.canceled)

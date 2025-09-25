@@ -148,6 +148,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Spells",
+            "id": "530d90da-5140-4ea3-b8e5-3d37b7fda09f",
+            "actions": [
+                {
+                    "name": "FIREBALL",
+                    "type": "Button",
+                    "id": "b453d643-daa4-4645-82dc-1e8dc220c3ed",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LIGHTNING",
+                    "type": "Button",
+                    "id": "aee9adda-35a5-40c2-927d-a44cb8ef8654",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FART",
+                    "type": "Button",
+                    "id": "b1c48e0f-eefb-4358-9fac-8f74ee6dc3d5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d9fac33f-a6aa-45df-a2da-4966578427b7",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FIREBALL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4045b87c-6819-45d6-8364-bab61b802806",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LIGHTNING",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64be01bc-dc49-493c-89bd-b8d4a460cfd9",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FART",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
