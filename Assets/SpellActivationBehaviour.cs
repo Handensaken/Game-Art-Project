@@ -36,9 +36,9 @@ public class SpellActivationBehaviour : MonoBehaviour
     }
     public void ElectricArc()
     {
-        GameObject g = Instantiate(ElectricArcVFX, pos, Quaternion.identity);
-        Quaternion rot = new Quaternion(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z, transform.rotation.w);
-        g.transform.rotation = rot;
+        GameObject g = Instantiate(ElectricArcVFX, pos, new Quaternion(0, -90, 0, 0), transform);
+        //g.transform.parent = null;
+
     }
     public void Fart()
     {
