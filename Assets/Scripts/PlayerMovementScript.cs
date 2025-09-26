@@ -1,11 +1,6 @@
 using System.Collections;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -65,9 +60,9 @@ public class PlayerMovementScript : MonoBehaviour
         }
         float f = Mathf.Clamp(ActiveMovement.magnitude * 100 / 2.4f, 0, 1);
         //sprinting behaviour
-        if (f >= 0.9f)
+        if (f >= 0.8f)
         {
-            //   Debug.Log("Sprinting");
+            f = 1.0f;
             sprintT += Time.deltaTime;
             if (sprintT > 5)
             {
@@ -88,6 +83,7 @@ public class PlayerMovementScript : MonoBehaviour
             animCTRL.SetBool("Sprint", false);
         }
         animCTRL.SetFloat("Blend", f);
+        Debug.Log(f);
     }
 
     //Interpolation coroutine. Don't touch 
