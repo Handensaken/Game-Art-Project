@@ -83,7 +83,7 @@ public class PlayerMovementScript : MonoBehaviour
             animCTRL.SetBool("Sprint", false);
         }
         animCTRL.SetFloat("Blend", f);
-        Debug.Log(f);
+//        Debug.Log(f);
     }
 
     //Interpolation coroutine. Don't touch 
