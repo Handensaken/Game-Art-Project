@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 392798806094294525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.85, y: 2.64, z: 0.76}
+  m_LocalPosition: {x: 0, y: 0, z: 2.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520213967949930190}
+  - component: {fileID: 1727063542009375056}
   m_Layer: 0
   m_Name: ElectricArc
   m_TagString: Untagged
@@ -86,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5793296958962855235}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -97,7 +98,19 @@ Transform:
   - {fileID: 2675575287821967963}
   - {fileID: 1453922265760515516}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1727063542009375056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793296958962855235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10237acd9afc5bc45ba68e30fc87cb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6127183055621687389
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 6127183055621687389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 2.71, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,13 +220,13 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Pos1
         m_Overridden: 1
-      - m_Value: {x: -0.00000011920929, y: 2.71, z: 1.0000001}
+      - m_Value: {x: 0, y: 0, z: 1}
         m_Name: Pos2
         m_Overridden: 1
-      - m_Value: {x: -0.76000035, y: 2.64, z: 2.85}
+      - m_Value: {x: 0, y: 0, z: 2.85}
         m_Name: Pos3
         m_Overridden: 1
-      - m_Value: {x: -0.00000047683716, y: 3.18, z: 5.9100003}
+      - m_Value: {x: 0, y: 0, z: 3.350916}
         m_Name: Pos4
         m_Overridden: 1
     m_Vector4f:
@@ -389,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 8149456813168392528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.91, y: 3.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.350916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -15,13 +15,6 @@ using UnityEngine.InputSystem;
 public class SpellActivationBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private GameObject FireballVFX;
-    [SerializeField]
-    private GameObject ElectricArcVFX;
-    [SerializeField]
-    private GameObject _fartVFX;
-
-    [SerializeField]
     private Transform _spawnPos;
 
     private Vector3 _pos;
@@ -88,6 +81,16 @@ public class SpellActivationBehaviour : MonoBehaviour
             _inputAction.actionMaps[3].Disable();
             _targetPos.gameObject.SetActive(false);
 
+        }
+    }
+
+    Transform electrico;
+    public void ActivateSpell(InputAction.CallbackContext ctx)
+    {
+        if (_activeSpell == null) return;
+        if (ctx.performed)
+        {
+            _activeSpell.CastSpell(transform, _targetPos);
         }
     }
 }

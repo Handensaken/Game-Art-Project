@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_ActionId
@@ -1141,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionId
-      value: 641cd816-40e6-41b4-8c3d-04687c349290
+      value: c2a93b83-8366-478c-9306-ede7b323ac59
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[9].m_ActionId
@@ -1217,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionName
-      value: 'Player/Sprint[/Keyboard/leftShift]'
+      value: 'SpellGUI/Activate[/Keyboard/space]'
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[9].m_ActionName
@@ -1284,6 +1284,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -1301,6 +1305,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
@@ -1324,7 +1332,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 804247435}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950096575}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
@@ -1348,6 +1364,10 @@ PrefabInstance:
       value: RecieveInput
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerMovementScript, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1368,6 +1388,10 @@ PrefabInstance:
       value: SpellTargetPositioning, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpellActivationBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1385,6 +1409,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441155850611647640, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5522170170810449935, guid: aa95654e91a9e014f8f880f9e5968da4, type: 3}
@@ -2112,7 +2140,6 @@ GameObject:
   - component: {fileID: 1805967575}
   - component: {fileID: 1805967578}
   - component: {fileID: 1805967577}
-  - component: {fileID: 1805967576}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -2135,27 +2162,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 804247434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1805967576
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805967574}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1805967577
 MeshRenderer:
   m_ObjectHideFlags: 0
