@@ -1,21 +1,14 @@
 using Unity.Mathematics;
 using UnityEngine;
 
+
+[CreateAssetMenu(menuName = "Assets/ScriptableObjects/Test")]
 public class LightningSpell : Spell
 {
     [SerializeField]
     private GameObject ElectricArcEffect;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public int test;
     public override void CastSpell(Transform origin)
     {
         base.CastSpell(origin);

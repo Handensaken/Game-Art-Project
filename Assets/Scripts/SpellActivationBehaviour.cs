@@ -1,6 +1,16 @@
+using System;
+using System.Dynamic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+//TODO: 
+//Set up input to move target
+//Set up active map. 
+//Find angle to target
+//Rotate spell to face Target 
+//Make decal VFX for target 
 
 public class SpellActivationBehaviour : MonoBehaviour
 {
@@ -12,18 +22,15 @@ public class SpellActivationBehaviour : MonoBehaviour
     private GameObject _fartVFX;
 
     [SerializeField]
-    private Transform _castingPos;
+    private Transform _spawnPos;
 
     private Vector3 _pos;
 
     [SerializeField]
-    private Transform _targetPos;
+    private Transform _targetPos;   //This is the game object that should be moved while casting 
 
     [SerializeField]
     private InputActionAsset _inputAction;
-
-    [SerializeField]
-    private Spell[] _spells;
 
     private Spell _activeSpell;
 
@@ -31,68 +38,56 @@ public class SpellActivationBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _whoreCanvas;
 
-    private bool _casting;
+    public bool _casting { private set; get; }
     void Start()
     {
+        //This should be replaced with a reference to the spell focus
+        _spawnPos = transform;
+
         _inputAction.actionMaps[1].Enable();
         _inputAction.actionMaps[2].Disable();
     }
     void Update()
     {
-        _pos = _castingPos.position;
+        _pos = _spawnPos.position;
     }
     public void ChangeSpell(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
         {
-            Debug.Log("MY COCK CAN COUGH");
             _inputAction.actionMaps[0].Disable();
 
             _inputAction.actionMaps[2].Enable();
             _whoreCanvas.SetActive(!_whoreCanvas.activeSelf);
         }
-        if (!_whoreCanvas)
+        if (ctx.canceled)
         {
             _inputAction.actionMaps[0].Enable();
             _inputAction.actionMaps[2].Disable();
-           // _whoreCanvas.SetActive(false);
+            _whoreCanvas.SetActive(!_whoreCanvas.activeSelf);
         }
     }
-
-    public void SelectActiveSpell()
+    private string activeSpellDebug = "";
+    public void SelectActiveSpell(Spell spell)
     {
-        Debug.Log("WEEWOOO");   
+        _activeSpell = spell;
     }
     public void CastSpell(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
         {
+            _targetPos.position = transform.position;
+            _targetPos.gameObject.SetActive(true);
             _casting = true;
-            _activeSpell.CastSpell(transform);
+            //            _activeSpell.CastSpell(transform);
+            _inputAction.actionMaps[3].Enable();
         }
         if (ctx.canceled)
         {
-            _casting = false;
-        }
-    }
-    public void Fireball()
-    {
-        Debug.Log(_pos);
-        Instantiate(FireballVFX, _pos, _castingPos.rotation);
-    }
-    public void ElectricArc(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            GameObject g = Instantiate(ElectricArcVFX, _pos, ElectricArcVFX.transform.rotation, transform);
-
+            //          _casting = false;
+            _inputAction.actionMaps[3].Disable();
+            _targetPos.gameObject.SetActive(false);
 
         }
-    }
-
-
-    public void Fart()
-    {
-        Instantiate(_fartVFX, _targetPos.position, Quaternion.identity);
     }
 }

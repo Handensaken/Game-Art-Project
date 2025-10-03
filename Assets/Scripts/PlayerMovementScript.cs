@@ -41,6 +41,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool casting = GetComponent<SpellActivationBehaviour>()._casting;
         //Remap movement direction to a 3D vector
         Vector3 movementVector = new Vector3(_movementDir.x, 0, _movementDir.y);
 
@@ -49,18 +50,20 @@ public class PlayerMovementScript : MonoBehaviour
         //Map the movement as interpolation between zero and the true movement. 
         Vector3 ActiveMovement = Vector3.Lerp(Vector3.zero, TrueMovement, lerpT);
 
+
+        ActiveMovement = Quaternion.AngleAxis(-45, Vector3.up) * ActiveMovement;
         //Move the character's transform in world space
         transform.Translate(ActiveMovement, Space.World);
 
         //Align character to direction
-        if (movementVector * _runSpeed != Vector3.zero)
+        if (ActiveMovement * _runSpeed != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
+            Quaternion toRotation = Quaternion.LookRotation(ActiveMovement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
         float f = Mathf.Clamp(ActiveMovement.magnitude * 100 / 2.4f, 0, 1);
         //sprinting behaviour
-        if (f >= 0.8f)
+        if (f >= 0.8f && !casting)
         {
             f = 1.0f;
             sprintT += Time.deltaTime;
@@ -83,7 +86,7 @@ public class PlayerMovementScript : MonoBehaviour
             animCTRL.SetBool("Sprint", false);
         }
         animCTRL.SetFloat("Blend", f);
-//        Debug.Log(f);
+        //        Debug.Log(f);
     }
 
     //Interpolation coroutine. Don't touch 
