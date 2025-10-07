@@ -26,7 +26,8 @@ public class ElectricArcChildPositioning : MonoBehaviour
     void Update()
     {
 
-
+        //StartCoroutine(LerpTimer(1, x => fd = x, 0));
+        //Debug.Log(fd);
 
         /*  var d = childObjects[3].position;
           Debug.Log("FD is " + fd);
@@ -39,7 +40,7 @@ public class ElectricArcChildPositioning : MonoBehaviour
         spellOrigin = origin;
         spellTarget = target;
         f = Vector3.Distance(transform.position, spellTarget.position) - 3;
-       // StartCoroutine(LerpTimer(1, (x) => { fd = x; }, 0));
+        // StartCoroutine(LerpTimer(1, (x) => { fd = x; }, 0));
         childObjects[3].position = childObjects[3].position + spellDir.normalized * f;
 
         childObjects[2].position = childObjects[2].position + spellDir.normalized * (f * 0.66f) + new Vector3(0, 2, 0);
