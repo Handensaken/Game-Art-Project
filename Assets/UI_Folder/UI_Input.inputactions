@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "UI_Input",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "a4989ec3-5954-4db6-a178-900f1e07e67c",
+            "actions": [
+                {
+                    "name": "Hold",
+                    "type": "Button",
+                    "id": "ca882245-6d67-4ae1-9e78-a0d470702d20",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "290555fc-d3fb-4843-a990-88a215a03f29",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
