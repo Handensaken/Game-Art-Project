@@ -9,15 +9,15 @@ public class uiScript : MonoBehaviour
 
     private float holdTimer = 0;
     private bool isHolding = false;
-    void Start()
+    void onEnable()
     {
-        
+	    isHolding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-	    if (isHolding = true)
+	    if(isHolding)
 	    {
 		    holdTimer += Time.deltaTime;
 		    fillCircle.fillAmount = holdTimer / holdRequirement;
@@ -30,24 +30,16 @@ public class uiScript : MonoBehaviour
 
     public void OnHold(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.performed)
         {
-	        
+	        Debug.Log("cFUCK");
 	        isHolding = true;
+	        //StartHold();
         }else if (ctx.canceled)
 		{
 			Debug.Log("canceled");
-			//ResetHold();
+			ResetHold();
 		}
-
-    }
-    
-    public void Test(InputAction.CallbackContext ctx)
-    {
-	    if (ctx.performed)
-	    {
-		    Debug.Log("test");
-	    }
 
     }
     
