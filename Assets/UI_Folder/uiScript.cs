@@ -4,14 +4,16 @@ using UnityEngine.InputSystem;
 
 public class uiScript : MonoBehaviour
 {
+	public GameObject[] sections;
+	private int currentSection = 0;
 	
-	public Image targetImage;
+	public Image targetWeaponImage;
 	public Sprite[] sprites;
 	public int maximumWeaponInt = 5;
-	public int currentWeaponInt = 0;
+	private int currentWeaponInt = 0;
 	
-	
-	
+	//Holy fuck im lazy, this shit aint gonna be optimized anyway so imma bullshit lol
+
 	
 	
 	
@@ -39,39 +41,60 @@ public class uiScript : MonoBehaviour
 	    }
     }
 
-    public void rightClick(InputAction.CallbackContext ctx)
+    public void downClick(InputAction.CallbackContext ctx)
     {
 	    if (ctx.performed)
+	    {
+		    if (currentSection <= 0)
+		    {
+			    sections[currentSection].SetActive(false);
+			    currentSection += 1;
+			    sections[currentSection].SetActive(true);
+			    Debug.Log(currentSection);
+		    }
+		    else
+		    {
+			    sections[currentSection].SetActive(false);
+			    currentSection = 0;
+			    sections[currentSection].SetActive(true);
+			    Debug.Log(currentSection);
+				    
+		    }
+	    }
+    }
+    
+    public void rightClick(InputAction.CallbackContext ctx)
+    {
+	    if (ctx.performed && currentSection == 1)
 	    {
 		    if (currentWeaponInt <= maximumWeaponInt - 1)
 		    {
 			    currentWeaponInt += 1;
-			    targetImage.sprite = sprites[currentWeaponInt];
+			    targetWeaponImage.sprite = sprites[currentWeaponInt];
 			    Debug.Log(currentWeaponInt);
 		    }
 		    else
 		    {
 			    currentWeaponInt = 0;
-			    targetImage.sprite = sprites[currentWeaponInt];
+			    targetWeaponImage.sprite = sprites[currentWeaponInt];
 		    }
-			    
 	    }
     }
     public void leftClick(InputAction.CallbackContext ctx)
     {
-	    if (ctx.performed)
+	    if (ctx.performed && currentSection == 1)
 	    {
 		    if (currentWeaponInt > 0)
 		    {
 			    currentWeaponInt -= 1;
-			    targetImage.sprite = sprites[currentWeaponInt];
+			    targetWeaponImage.sprite = sprites[currentWeaponInt];
 			    Debug.Log(currentWeaponInt);
 			  
 		    }
 		    else
 		    {
 			    currentWeaponInt = maximumWeaponInt;
-			    targetImage.sprite = sprites[currentWeaponInt];
+			    targetWeaponImage.sprite = sprites[currentWeaponInt];
 		    }
 			    
 	    }
