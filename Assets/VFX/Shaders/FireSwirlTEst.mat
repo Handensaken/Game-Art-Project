@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2DLOD_cbe2515355d74c2fad802410da8ab24a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 7814263aefc8cd340b2a30567bf82474, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2DLOD_d078dba2d551407e821f1763122aa51f_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: fadaedb3278bacc4c8e023c1ae8d6e47, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -57,24 +61,26 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaToMask: 0
-    - _Alpha_Clip: 1
-    - _Angle: 12.1
+    - _Alpha_Clip: 0
+    - _Angle: 10
     - _Blend: 0
     - _CastShadows: 0
     - _Cull: 0
     - _DstBlend: 10
     - _Float: 1
-    - _Magnitude: 0.7
+    - _Magnitude: -20
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
-    - _Stretch: 1
+    - _Stretch: 8.92
     - _Surface: 1
+    - _Test: 3.14
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
     - _Center: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _MainColor: {r: 32, g: 2.418464, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8730156197861590237
