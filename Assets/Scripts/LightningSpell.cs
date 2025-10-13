@@ -19,7 +19,7 @@ public class LightningSpell : Spell
             childObjects[i - 1] = g.transform.GetChild(i);
         }
         // g.transform.GetChild(4).transform.position = target.position;
-        float f = Vector3.Distance(g.transform.position, target.position) - 3;
+        float f = Vector3.Distance(g.transform.position, hitPoint) - 3;
 
         //   var d = childObjects[3].position;
         //  Vector3.Lerp(origin.position, childObjects[3].position + dir.normalized * f, Time.deltaTime);
@@ -30,6 +30,6 @@ public class LightningSpell : Spell
         childObjects[1].position = childObjects[1].position + dir.normalized * (f * 0.33f) + new Vector3(0, 2, 0);
 
         childObjects[0].parent = origin;
-
+        Destroy(childObjects[0].gameObject, 3);
     }
 }

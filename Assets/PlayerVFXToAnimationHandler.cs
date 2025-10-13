@@ -5,39 +5,35 @@ using UnityEngine.VFX;
 public class PlayerVFXToAnimationHandler : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _runningParticlePrefab;
+
     private VisualEffect _runningEffect;
 
     //This helps position and initiate effects
-    private List<VisualEffect> activeEffects = new List<VisualEffect>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnEnable()
-    {
-        activeEffects.Add(_runningEffect);
-    }
 
+    void Start()
+    {
+        _runningEffect = _runningParticlePrefab.GetComponent<VisualEffect>();
+        _runningParticlePrefab.transform.parent = transform;
+        _runningEffect.transform.localPosition = new Vector3(0, 0, 0);
+    }
     // Update is called once per frame
     void Update()
     {
-        foreach (VisualEffect activeEffect in activeEffects)
-        {
-            activeEffect.transform.position = transform.position;
-        }
+
     }
     void LateUpdate()
     {
-        foreach (VisualEffect activeEffect in activeEffects)
-        {
-            if (!activeEffect.enabled) activeEffects.Remove(activeEffect);
-        }
+
     }
 
 
     //Animation event functions
     public void SetRunningParticles(int boolFlag)
     {
-        if (boolFlag == 1 && !activeEffects.Contains(_runningEffect))
+        if (boolFlag == 1)
         {
-            activeEffects.Add(_runningEffect);
             _runningEffect.enabled = true;
         }
         else if (boolFlag == 0)

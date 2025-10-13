@@ -56,7 +56,7 @@ public class PlayerMovementScript : MonoBehaviour
         transform.Translate(ActiveMovement, Space.World);
 
         //Align character to direction
-        if (ActiveMovement * _runSpeed != Vector3.zero)
+        if (ActiveMovement * activeSpeed != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(ActiveMovement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -137,7 +137,16 @@ public class PlayerMovementScript : MonoBehaviour
         if (context.canceled)
         {
             StopAllCoroutines();
-            StartCoroutine(LerpTimer(0, _stopInterpolationSpeed));
+            if (activeSpeed == _sprintSpeed)
+            {
+                StartCoroutine(LerpTimer(0, 0.5f));
+
+            }
+            else
+            {
+
+                StartCoroutine(LerpTimer(0, _stopInterpolationSpeed));
+            }
         }
         else
         {

@@ -17,16 +17,22 @@ public class FireballBehaviour : MonoBehaviour
     {
 
     }
-
+    //float timer;
     // Update is called once per frame
     void Update()
     {
-
-        Debug.DrawRay(transform.position, travelDir * Mathf.Infinity, Color.magenta);
+        //timer += Time.deltaTime;
+        if (transform.GetChild(2).GetComponent<VisualEffect>().enabled)
+        {
+            Destroy(gameObject, 10);
+        }
+       
     }
+ 
 
-    public void GetData(Vector3 dir, Vector3 target, Vector3 offset)
+    public void GetData(Vector3 dir, Vector3 target, Vector3 offset, Transform origin)
     {
+     
         _boomPos = target;
         travelDir = dir;
         _spellOffset = offset;
@@ -42,7 +48,6 @@ public class FireballBehaviour : MonoBehaviour
         while (true)
         {
             v = _boomPos - transform.position;
-            Debug.Log(v);
             transform.Translate(travelDir * _fireballSpeed * Time.deltaTime, Space.World);
             if (v.y > -0.1 && v.y < 0.1)
                 break;
@@ -56,8 +61,8 @@ public class FireballBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
             t += 0.01f;
             transform.GetChild(1).localScale = Vector3.Lerp(new Vector3(0.5f, 0.5f, 0.5f), new Vector3(0f, 0f, 0f), t);
+            transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         }
-        Debug.Log("Should boom");
     }
     private IEnumerator Anticipation()
     {
@@ -77,6 +82,7 @@ public class FireballBehaviour : MonoBehaviour
             t += 0.01f;
             ball.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(0.5f, 0.5f, 0.5f), t);
         }
+        ball.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
     }
 }

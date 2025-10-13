@@ -33,6 +33,17 @@ public class ElectricArcChildPositioning : MonoBehaviour
           Debug.Log("FD is " + fd);
           childObjects[3].position = Vector3.Lerp(spellOrigin.position, d + spellDir.normalized * f, fd);*/
 
+        fd += Time.deltaTime;
+        if (fd > 3)
+        {
+            Debug.Log("should destroy");
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            Debug.Log(fd);
+        }
 
     }
     public void GetData(Transform origin, Transform target, Vector3 dir)
