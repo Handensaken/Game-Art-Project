@@ -90,7 +90,7 @@ public class SpellActivationBehaviour : MonoBehaviour
         if (_activeSpell == null) return;
         if (ctx.performed)
         {
-            _activeSpell.CastSpell(transform, _targetPos);
+            _activeSpell.CastSpell(transform, _targetPos, new Vector3());
         }
     }
 }

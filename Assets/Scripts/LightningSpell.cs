@@ -2,7 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(menuName = "Assets/ScriptableObjects/Test")]
+[CreateAssetMenu(menuName = "Assets/ScriptableObjects/LightningSpell")]
 public class LightningSpell : Spell
 {
     [SerializeField]
@@ -10,10 +10,10 @@ public class LightningSpell : Spell
 
     private Transform[] childObjects = new Transform[4];
 
-    public override void CastSpell(Transform origin, Transform target)
+    public override void CastSpell(Transform origin, Transform target, Vector3 offset)
     {
         SpellEffect = ElectricArcEffect;
-        base.CastSpell(origin, target);
+        base.CastSpell(origin, target, offset);
         for (int i = 1; i < ElectricArcEffect.transform.childCount; i++)
         {
             childObjects[i - 1] = g.transform.GetChild(i);
