@@ -29,7 +29,7 @@ public class SpellActivationBehaviour : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject _whoreCanvas;
+    private GameObject _playerWSCanvas;
 
     public bool _casting { private set; get; }
     void Start()
@@ -51,13 +51,13 @@ public class SpellActivationBehaviour : MonoBehaviour
             _inputAction.actionMaps[0].Disable();
 
             _inputAction.actionMaps[2].Enable();
-            _whoreCanvas.SetActive(!_whoreCanvas.activeSelf);
+            _playerWSCanvas.SetActive(!_playerWSCanvas.activeSelf);
         }
         if (ctx.canceled)
         {
             _inputAction.actionMaps[0].Enable();
             _inputAction.actionMaps[2].Disable();
-            _whoreCanvas.SetActive(!_whoreCanvas.activeSelf);
+            _playerWSCanvas.SetActive(!_playerWSCanvas.activeSelf);
         }
     }
     private string activeSpellDebug = "";
@@ -90,7 +90,7 @@ public class SpellActivationBehaviour : MonoBehaviour
         if (_activeSpell == null) return;
         if (ctx.performed)
         {
-            _activeSpell.CastSpell(transform, _targetPos);
+            _activeSpell.CastSpell(transform, _targetPos, new Vector3());
         }
     }
 }
