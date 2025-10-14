@@ -18,15 +18,6 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
         _runningParticlePrefab.transform.parent = transform;
         _runningEffect.transform.localPosition = new Vector3(0, 0, 0);
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    void LateUpdate()
-    {
-
-    }
 
 
     //Animation event functions
