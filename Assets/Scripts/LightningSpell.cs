@@ -13,6 +13,7 @@ public class LightningSpell : Spell
     public override void CastSpell(Transform origin, Transform target, Vector3 offset)
     {
         SpellEffect = ElectricArcEffect;
+        offset = new Vector3(0, 2.5f, 0);
         base.CastSpell(origin, target, offset);
         for (int i = 1; i < ElectricArcEffect.transform.childCount; i++)
         {

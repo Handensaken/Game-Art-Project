@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 194524844075480769}
   - component: {fileID: 8822398536661348816}
   - component: {fileID: 5094614081346895850}
+  - component: {fileID: 4407409199829919672}
   m_Layer: 0
   m_Name: PlayerFollowCam
   m_TagString: Untagged
@@ -61,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 1851743703071990843}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 31, y: 38, z: -31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92,8 +93,8 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 7
-    NearClipPlane: -50
+    OrthographicSize: 10
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -146,6 +147,20 @@ MonoBehaviour:
   AmplitudeGain: 0
   FrequencyGain: 0
   m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &4407409199829919672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851743703071990843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16003cfcc420e5244ab44507ac101037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 0}
+  _cameraOffset: {x: 25, y: 38, z: -25}
 --- !u!1 &7762411790367389381
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 7762411790367389381}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 31, y: 38, z: -31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -212,11 +227,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -50
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
