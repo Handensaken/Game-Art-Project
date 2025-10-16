@@ -8,15 +8,15 @@ public class FireballSpell : Spell
     [SerializeField]
     private GameObject FireballEffect;
     //private Vector3 explosionTarget;
-
-    public override void CastSpell(Transform origin, Transform target, Vector3 offset)
+    string spellthingy = "Fireball";
+    public override void CastSpell(string s, GameEventManager gameEventManager)
     {
-       // origin.position = origin.position + new Vector3(0,10,0);
+        // origin.position = origin.position + new Vector3(0,10,0);
         SpellEffect = FireballEffect;
-        offset = new Vector3(0, 4.5f, 0);
-        base.CastSpell(origin, target, offset);
-        
-        g.GetComponent<FireballBehaviour>().GetData(dir, hitPoint, offset, origin);
+        // offset = new Vector3(0, 4.5f, 0);
+        base.CastSpell(spellthingy, gameEventManager);
+
+        //  g.GetComponent<FireballBehaviour>().GetData(dir, hitPoint, offset, origin, player);
 
     }
 }

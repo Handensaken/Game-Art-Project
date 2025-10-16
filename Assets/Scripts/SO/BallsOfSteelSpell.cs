@@ -5,10 +5,10 @@ public class BallsOfSteelSpell : Spell
 {
     [SerializeField]
     private GameObject BoSEffect;
-    public override void CastSpell(Transform origin, Transform target, Vector3 offset)
+    public override void CastSpell(string spell, GameEventManager gameEventManager)
     {
         SpellEffect = BoSEffect;
-        offset = new Vector3(0, 1.5f, 0);
-        base.CastSpell(target, target, offset);
+       // offset = new Vector3(0, 1.5f, 0);
+        base.CastSpell("BoS", gameEventManager);
     }
 }

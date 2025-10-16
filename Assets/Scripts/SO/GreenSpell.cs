@@ -6,12 +6,12 @@ public class GreenSpell : Spell
 {
     [SerializeField] private GameObject GreenEffect;
 
-    public override void CastSpell(Transform origin, Transform target, Vector3 offset)
+    public override void CastSpell(string spell, GameEventManager gameEventManager)
     {
         SpellEffect = GreenEffect;
-        offset = new Vector3(0, 0, 0);
-        base.CastSpell(target, target, offset);
-        g.GetComponent<VisualEffect>().enabled = true;
-        Destroy(g, 10f);
+     
+        base.CastSpell("Green", gameEventManager);
+        /*g.GetComponent<VisualEffect>().enabled = true;
+        Destroy(g, 10f);*/
     }
 }

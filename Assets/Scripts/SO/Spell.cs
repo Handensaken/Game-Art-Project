@@ -10,12 +10,13 @@ public class Spell : ScriptableObject
     private Vector3 localDir;
 
     protected Vector3 hitPoint;
-    public virtual void CastSpell(Transform origin, Transform target, Vector3 offset)
+    public virtual void CastSpell(string spell, GameEventManager gameEventManager)
     {
-        g = Instantiate(SpellEffect, origin.position + offset, SpellEffect.transform.rotation, null);
+        gameEventManager.instance.SendAnimationParams(spell);
+        /*g = Instantiate(SpellEffect, origin.position + offset, SpellEffect.transform.rotation, null);
 
         dir = target.position - (origin.position + offset);
-        localDir = target.position - origin.position;
+        localDir = target.position - player.position;
         Quaternion toRotation = Quaternion.LookRotation(localDir, Vector3.up);
         g.transform.rotation = Quaternion.RotateTowards(SpellEffect.transform.rotation, toRotation, 1000);
 
@@ -30,6 +31,6 @@ public class Spell : ScriptableObject
         {
             hitPoint = target.position;
             Debug.Log("did not hit an obstacle");
-        }
+        }*/
     }
 }

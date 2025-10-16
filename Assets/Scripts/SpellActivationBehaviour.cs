@@ -31,6 +31,7 @@ public class SpellActivationBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _playerWSCanvas;
 
+    public GameEventManager _playerGameEventManager;
     public bool _casting { private set; get; }
     void Start()
     {
@@ -39,10 +40,18 @@ public class SpellActivationBehaviour : MonoBehaviour
 
         _inputAction.actionMaps[1].Enable();
         _inputAction.actionMaps[2].Disable();
+
+        _playerGameEventManager.instance.OnSendAnimationParams += Test;
+    }
+    void OnDisable()
+    {
+        _playerGameEventManager.instance.OnSendAnimationParams -= Test;
     }
     void Update()
     {
         _pos = _spawnPos.position;
+       // Debug.DrawRay(castingPos.position, _targetPos.position - castingPos.position * Mathf.Infinity, Color.magenta);
+
     }
     public void ChangeSpell(InputAction.CallbackContext ctx)
     {
@@ -83,14 +92,69 @@ public class SpellActivationBehaviour : MonoBehaviour
 
         }
     }
+    [SerializeField] private Animator playerAnimator;
 
-    Transform electrico;
+    private void Test(string s)
+    {
+        playerAnimator.SetTrigger(s);
+    }
+
+    public Transform castingPos;
     public void ActivateSpell(InputAction.CallbackContext ctx)
     {
         if (_activeSpell == null) return;
         if (ctx.performed)
         {
-            _activeSpell.CastSpell(transform, _targetPos, new Vector3());
+            _activeSpell.CastSpell("", _playerGameEventManager);
         }
     }
+
+
+
+    //fuuuuuck
+
+    Vector3 dir;
+    Vector3 localDir;
+    Vector3 hitPoint;
+    public void SpellDistCal(GameObject spell, bool collCheck)
+    {
+        GameObject g = null;
+
+        dir = _targetPos.position - castingPos.position;
+        localDir = _targetPos.position - transform.position;
+       
+
+        if (collCheck)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(castingPos.position, dir, out hit, Vector3.Distance(castingPos.position, _targetPos.position) - 1))
+            {
+                Debug.DrawRay(castingPos.position, dir * hit.distance, Color.magenta);
+                Debug.Log(hit.transform.name);
+                hitPoint = hit.point;
+                
+            }
+            else
+            {
+                hitPoint = _targetPos.position;
+                Debug.Log("did not hit an obstacle");
+            }
+
+            //Instantiate on casting stuff
+            g = Instantiate(spell, castingPos.position, spell.transform.rotation, null);
+
+            g.GetComponent<GenericSpellBehaviour>().GetData(dir, hitPoint, castingPos, transform);
+        }
+        else
+        {
+            hitPoint = _targetPos.position;
+            g = Instantiate(spell, hitPoint, Quaternion.identity, null);
+
+            g.GetComponent<GenericSpellBehaviour>().GetData(dir, hitPoint, castingPos, transform);
+
+            //instantiate on target pos
+        }
+ 
+    }
+
 }

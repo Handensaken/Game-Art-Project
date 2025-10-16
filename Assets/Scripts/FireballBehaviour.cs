@@ -2,12 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class FireballBehaviour : MonoBehaviour
+public class FireballBehaviour : GenericSpellBehaviour
 {
-    private Vector3 _boomPos;
-
-    private Vector3 travelDir;
-
     [SerializeField]
     private float _fireballSpeed;
 
@@ -15,74 +11,57 @@ public class FireballBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        //    player = GameObject.FindGameObjectWithTag("Player");
     }
     //float timer;
     // Update is called once per frame
     void Update()
     {
-        //timer += Time.deltaTime;
-        if (transform.GetChild(2).GetComponent<VisualEffect>().enabled)
+        if (player != null)
         {
-            Destroy(gameObject, 10);
+            castingPos = player.GetComponent<SpellActivationBehaviour>().castingPos;
         }
-       
-    }
- 
+        //timer += Time.deltaTime;
+        if (transform.GetChild(1).GetComponent<VisualEffect>().enabled)
+        {
+            Destroy(gameObject, 10); // borde flyttas maybe
+        }
 
-    public void GetData(Vector3 dir, Vector3 target, Vector3 offset, Transform origin)
+    }
+
+
+    public override void GetData(Vector3 dir, Vector3 target, Transform origin, Transform playerA)
     {
-     
-        _boomPos = target;
-        travelDir = dir;
-        _spellOffset = offset;
-        StartCoroutine(SpellTravel());
+        base.GetData(dir, target, origin, playerA);
+        StartCoroutine(SpellTravel());  //borde startas av ett amimationsevent
     }
-
-
     private IEnumerator SpellTravel()
     {
-        yield return Anticipation();
-        Vector3 v = _boomPos - transform.position;
+        transform.GetChild(0).GetComponent<VisualEffect>().enabled = true;
+        transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+
+        Vector3 v = target - transform.position;
 
         while (true)
         {
-            v = _boomPos - transform.position;
+            v = target - transform.position;
             transform.Translate(travelDir * _fireballSpeed * Time.deltaTime, Space.World);
             if (v.y > -0.1 && v.y < 0.1)
                 break;
             yield return null;
         }
 
-        transform.GetChild(2).GetComponent<VisualEffect>().enabled = true;
+        transform.GetChild(1).GetComponent<VisualEffect>().enabled = true;
         float t = 0;
-        while (t < 1)
+        Vector3 aaa = transform.GetChild(0).localScale;
+        while (t < 0.5f)
         {
             yield return new WaitForSeconds(0.001f);
             t += 0.01f;
-            transform.GetChild(1).localScale = Vector3.Lerp(new Vector3(0.5f, 0.5f, 0.5f), new Vector3(0f, 0f, 0f), t);
-            transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).localScale = Vector3.Lerp(aaa, new Vector3(0f, 0f, 0f), t);
+            transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
-    }
-    private IEnumerator Anticipation()
-    {
-        transform.GetChild(0).GetComponent<VisualEffect>().enabled = true;
-        for (int i = 0; i < 12; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
+        transform.GetChild(0).GetComponent<VisualEffect>().enabled = false;
 
-        Transform ball = transform.GetChild(1);
-        ball.localScale = new Vector3(0, 0, 0);
-        ball.GetComponent<VisualEffect>().enabled = true;
-        float t = 0;
-        while (t < 1)
-        {
-            yield return new WaitForSeconds(0.01f);
-            t += 0.01f;
-            ball.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(0.5f, 0.5f, 0.5f), t);
-        }
-        ball.GetChild(0).gameObject.SetActive(true);
-        yield return new WaitForSeconds(1);
     }
 }
