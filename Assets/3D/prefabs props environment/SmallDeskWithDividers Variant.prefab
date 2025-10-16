@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c79abd8ebb7aba47bb6c94a87ff63d8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f3e738851c6d4291394fb33562eac, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c79abd8ebb7aba47bb6c94a87ff63d8, type: 3}
       propertyPath: m_Name
       value: DividerMiddlePieceGLASSBlockout_RB (2)
@@ -110,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c79abd8ebb7aba47bb6c94a87ff63d8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f3e738851c6d4291394fb33562eac, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c79abd8ebb7aba47bb6c94a87ff63d8, type: 3}
       propertyPath: m_Name
       value: DividerMiddlePieceGLASSBlockout_RB (1)
@@ -331,12 +339,77 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4290019471129740889, guid: 01767547543c70845bd519748606dcb6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2782216280361117504}
+    - targetCorrespondingSourceObject: {fileID: 4290019471129740889, guid: 01767547543c70845bd519748606dcb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 516905184079877830}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01767547543c70845bd519748606dcb6, type: 3}
 --- !u!4 &1857915176869162074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4290019471129740889, guid: 01767547543c70845bd519748606dcb6, type: 3}
   m_PrefabInstance: {fileID: 2468414568270227971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3719573241805359666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1857915176869162074}
+    m_Modifications:
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.523735
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.2808008
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609766280466564686, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+      propertyPath: m_Name
+      value: LargeDeskWithDividers Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+--- !u!4 &516905184079877830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3797377462165888244, guid: 08851c14901fb304f9272fa51fd1482a, type: 3}
+  m_PrefabInstance: {fileID: 3719573241805359666}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6657031840452564973
 PrefabInstance:
@@ -390,6 +463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348683589279243330, guid: 19726f0347e3d5a4c99c7df1a1e9a913, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f3e738851c6d4291394fb33562eac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
