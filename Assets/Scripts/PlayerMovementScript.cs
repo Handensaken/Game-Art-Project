@@ -129,6 +129,7 @@ public class PlayerMovementScript : MonoBehaviour
     //This method reads the input system value. Don't mess with it unless you know what you're doing
     public void Movement(InputAction.CallbackContext context)
     {
+        Debug.Log("wtf?");
         if (context.started)
         {
             StopAllCoroutines();
