@@ -35,13 +35,19 @@ public class PlayerMovementScript : MonoBehaviour
     {
         activeSpeed = _runSpeed;
     }
-
+    float f = 0;
     private float lerpT = 0;
     private float sprintT;
+    bool casting;
     // Update is called once per frame
     void Update()
     {
-        bool casting = GetComponent<SpellActivationBehaviour>()._casting;
+        if (GetComponent<SpellActivationBehaviour>() != null)
+        {
+
+            casting = GetComponent<SpellActivationBehaviour>()._casting;
+        }
+
         //Remap movement direction to a 3D vector
         Vector3 movementVector = new Vector3(_movementDir.x, 0, _movementDir.y);
 
@@ -61,9 +67,9 @@ public class PlayerMovementScript : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(ActiveMovement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-        float f = Mathf.Clamp(ActiveMovement.magnitude * 100 / 2.4f, 0, 1);
+        f = Mathf.Clamp(ActiveMovement.magnitude * 100 / 2.4f, 0, 1);
         //sprinting behaviour
-        if (f >= 0.8f && !casting)
+        if (f >= 0.8f && !casting && !animCTRL.GetBool("Sneaking"))
         {
             f = 1.0f;
             sprintT += Time.deltaTime;
@@ -84,6 +90,16 @@ public class PlayerMovementScript : MonoBehaviour
         {
             sprintT = 0;
             animCTRL.SetBool("Sprint", false);
+        }
+        if (f > 0.1f)
+        {
+            animCTRL.SetBool("Running", true);
+
+        }
+        else
+        {
+            animCTRL.SetBool("Running", false);
+
         }
         animCTRL.SetFloat("Blend", f);
         //        Debug.Log(f);
@@ -119,17 +135,21 @@ public class PlayerMovementScript : MonoBehaviour
             activeSpeed = _sneakSpeed;
             animCTRL.SetBool("Sprint", false);
             Debug.Log("Sneaky Snitch bip bop");
+
+            animCTRL.SetBool("Sneaking", true);
+
         }
         else if (context.canceled)
         {
             activeSpeed = _runSpeed;
             Debug.Log("Not a sneaky bitch");
+            animCTRL.SetBool("Sneaking", false);
+
         }
     }
     //This method reads the input system value. Don't mess with it unless you know what you're doing
     public void Movement(InputAction.CallbackContext context)
     {
-        Debug.Log("wtf?");
         if (context.started)
         {
             StopAllCoroutines();
