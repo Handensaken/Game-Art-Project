@@ -73,6 +73,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             f = 1.0f;
             sprintT += Time.deltaTime;
+            Debug.Log("a");
             if (sprintT > 5)
             {
                 activeSpeed = _sprintSpeed;

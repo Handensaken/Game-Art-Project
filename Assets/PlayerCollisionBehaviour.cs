@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerCollisionBehaviour : MonoBehaviour
 {
+    public GameObject collisionPuff;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +24,8 @@ public class PlayerCollisionBehaviour : MonoBehaviour
             ContactPoint contact = collision.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
-           // Instantiate(, pos, rot);
+            GameObject g = Instantiate(collisionPuff, pos, rot);
+            Destroy(g, 1.5f);
         }
     }
 }
