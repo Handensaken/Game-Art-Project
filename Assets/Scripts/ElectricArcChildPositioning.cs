@@ -10,7 +10,7 @@ public class ElectricArcChildPositioning : GenericSpellBehaviour
     {
         for (int i = 1; i < transform.childCount; i++)
         {
-            Debug.Log("running child gathering");
+            //   Debug.Log("running child gathering");
             childObjects[i - 1] = transform.GetChild(i);
         }
 
@@ -50,8 +50,18 @@ public class ElectricArcChildPositioning : GenericSpellBehaviour
         dir = target - origin.position;
         f = Vector3.Distance(origin.position, target) - 3;
         // StartCoroutine(LerpTimer(1, (x) => { fd = x; }, 0));
-       // childObjects[3].position = childObjects[3].position + dir.normalized * f;
-    //    childObjects[3].position = childObjects[3].position + dir.normalized * f;
+        // childObjects[3].position = childObjects[3].position + dir.normalized * f;
+        //    childObjects[3].position = childObjects[3].position + dir.normalized * f;
+
+        RaycastHit hit;
+        if (Physics.Raycast(_target, Vector3.up, out hit, 5))
+        {
+            if (hit.transform.gameObject.CompareTag("ElectricalBox"))
+            {
+                target = hit.transform.Find("LightningTarget").transform.position;
+            }
+        }
+
         childObjects[3].position = target;
 
         childObjects[2].position = childObjects[2].position + dir.normalized * (f * 0.66f) + new Vector3(0, 2, 0);

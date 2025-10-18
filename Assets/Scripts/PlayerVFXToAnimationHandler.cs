@@ -102,7 +102,7 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     public void CastLightningSpell()
     {
-        Debug.Log(Lightning);
+     //   Debug.Log(Lightning);
         spellActivationBehaviour.SpellDistCal(Lightning, true);
     }
     public void CastBOS()
