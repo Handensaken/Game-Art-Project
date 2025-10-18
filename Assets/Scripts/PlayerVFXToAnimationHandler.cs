@@ -14,7 +14,7 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
     private VisualEffect _runningEffect;
 
     [Header("Spells")]
-    [SerializeField] private Transform castingPos;
+    [SerializeField] private Transform staffCastingPos;
 
     [Header("Fireball")]
     [SerializeField] private GameObject FireSwirl;
@@ -70,13 +70,13 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     public void SpawnFireSwirl()
     {
-        fireSwirl = Instantiate(FireSwirl, castingPos.position, quaternion.identity);
+        fireSwirl = Instantiate(FireSwirl, staffCastingPos.position, quaternion.identity);
         StartCoroutine(CheatUpdate(1.1f, UpdateSwirlToPos));
         Destroy(fireSwirl, 1.2f);
     }
     private void UpdateSwirlToPos()
     {
-        fireSwirl.transform.position = castingPos.position;
+        fireSwirl.transform.position = staffCastingPos.position;
     }
     private IEnumerator CheatUpdate(float time, Action shitToDo)
     {
@@ -91,7 +91,7 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
     GameObject fireball;
     public void SpawnFireball()
     {
-        fireball = Instantiate(FireBall, castingPos.position, quaternion.identity, castingPos);
+        fireball = Instantiate(FireBall, staffCastingPos.position, quaternion.identity, staffCastingPos);
 
     }
     public void CastFireSpell()

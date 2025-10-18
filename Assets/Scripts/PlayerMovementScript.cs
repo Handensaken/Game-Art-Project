@@ -30,6 +30,8 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]
     private Animator animCTRL;
 
+    public InputActionAsset playerInputActionAsset;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -73,7 +75,6 @@ public class PlayerMovementScript : MonoBehaviour
         {
             f = 1.0f;
             sprintT += Time.deltaTime;
-            Debug.Log("a");
             if (sprintT > 5)
             {
                 activeSpeed = _sprintSpeed;

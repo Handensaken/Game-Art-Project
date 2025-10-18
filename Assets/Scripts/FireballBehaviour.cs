@@ -46,7 +46,7 @@ public class FireballBehaviour : GenericSpellBehaviour
         {
             v = target - transform.position;
             transform.Translate(travelDir * _fireballSpeed * Time.deltaTime, Space.World);
-            if (v.y > -0.1 && v.y < 0.1)
+            if (v.y > -0.01 && v.y < 0.01)
                 break;
             yield return null;
         }

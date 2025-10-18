@@ -5,15 +5,30 @@ public class TestDetection : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!detecting)
+        {
+            if (playerDetecton > 0)
+            {
+                playerDetecton -= Time.deltaTime;
+            }
+            if (playerDetecton < 0) playerDetecton = 0;
 
+            if (playerDetecton < detectionTime / 4 && wasDetected)
+            {
+                wasDetected = false;
+                GetComponent<AiMovement>().TargetLost();
+                Debug.Log("No Longer detecting player");
+            }
+        }
     }
-
+    bool detecting;
+    bool wasDetected;
     float playerDetecton = 0;
     float detectionTime = 2;
     Collider ObscuringObject;
@@ -21,17 +36,30 @@ public class TestDetection : MonoBehaviour
     {
         if (other.CompareTag("Obscuring"))
         {
+            detecting = false;
+            if (playerDetecton > 0)
+            {
+                GetComponent<AiMovement>().TargetLost();
+            }
             ObscuringObject = other;
             playerDetecton = 0;
+
             return;
         }
         else if (other.CompareTag("Player") && ObscuringObject == null)
         {
-          //  Debug.Log("Detecting");
-            playerDetecton += Time.deltaTime;
+            detecting = true;
+            //  Debug.Log("Detecting");
+
             if (playerDetecton >= detectionTime)
             {
+                wasDetected = true;
+                GetComponent<AiMovement>().StartChasing(other.transform);
                 Debug.Log("Player Was detected");
+            }
+            else
+            {
+                playerDetecton += Time.deltaTime;
             }
         }
         ObscuringObject = null;
@@ -41,8 +69,14 @@ public class TestDetection : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("No Longer detecting player");
-            playerDetecton = 0;
+            detecting = false;
+            if (playerDetecton < detectionTime / 4)
+            {
+
+                GetComponent<AiMovement>().TargetLost();
+                Debug.Log("No Longer detecting player");
+            }
+            // playerDetecton = 0;
         }
     }
 }
