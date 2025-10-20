@@ -14,6 +14,9 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]
     [Tooltip("Adjust the sneaking speed (Default: 5)")]
     private float _sneakSpeed;
+    [SerializeField]
+    [Tooltip("Adjust the time needed to sprint (Default: 5)")]
+    private float timeSprint;
 
     private float activeSpeed;
     [Header("Interpolations")]
@@ -75,7 +78,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             f = 1.0f;
             sprintT += Time.deltaTime;
-            if (sprintT > 5)
+            if (sprintT > timeSprint)
             {
                 activeSpeed = _sprintSpeed;
                 animCTRL.SetBool("Sprint", true);
