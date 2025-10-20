@@ -4967,7 +4967,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -1
   m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -5054,7 +5054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2533672897666037984
 Transform:
   m_ObjectHideFlags: 0
@@ -5256,7 +5256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bae7bc51a129fb4f9e2b907044d72d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireballSpeed: 5
+  _fireballSpeed: 2.5
 --- !u!1 &7779300421839703003
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,7 +5371,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
 --- !u!1 &8094342980371319129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,7 +5448,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:

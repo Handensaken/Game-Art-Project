@@ -464,39 +464,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Stick",
-                    "id": "4939f90d-063b-485e-8387-b5ca882ea577",
-                    "path": "Stick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SpellTargetPos",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "horizontal",
-                    "id": "e439fed4-6fc5-495a-93af-95323625980f",
-                    "path": "<HID:: USB Gamepad          >/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SpellTargetPos",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "vertical",
-                    "id": "ba66ca0e-4aa9-4738-ba04-de18e050287a",
-                    "path": "<HID:: USB Gamepad          >/rz",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SpellTargetPos",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "e882c5a5-5f72-4924-ad1b-da2263ec5f35",
                     "path": "<Keyboard>/space",
@@ -534,6 +501,11 @@
                 {
                     "devicePath": "<Joystick>",
                     "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
                     "isOR": false
                 }
             ]

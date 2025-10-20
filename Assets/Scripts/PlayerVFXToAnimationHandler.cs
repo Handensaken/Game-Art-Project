@@ -15,6 +15,8 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     [Header("Spells")]
     [SerializeField] private Transform staffCastingPos;
+    [SerializeField] private Transform orbCastingPos;
+
 
     [Header("Fireball")]
     [SerializeField] private GameObject FireSwirl;
@@ -28,6 +30,13 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     [Header("Green")]
     [SerializeField] private GameObject GreenSpell;
+    [SerializeField] private GameObject GreenPillar;
+    [SerializeField] private GameObject GreenShockwave;
+    [SerializeField] private GameObject GreenSwirl;
+
+
+
+
     [Header("Balls of steel")]
     [SerializeField] private GameObject BOS;
 
@@ -102,16 +111,35 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     public void CastLightningSpell()
     {
-     //   Debug.Log(Lightning);
+        //   Debug.Log(Lightning);
         spellActivationBehaviour.SpellDistCal(Lightning, true);
     }
     public void CastBOS()
     {
         spellActivationBehaviour.SpellDistCal(BOS, false);
     }
+
+
+    GameObject greenswirl;
+    public void SpawnGreenSwirl()
+    {
+        greenswirl = Instantiate(GreenSwirl, orbCastingPos.position, quaternion.identity);
+        StartCoroutine(CheatUpdate(1.1f, UpdateGreenPos));
+        Destroy(greenswirl, 1.2f);
+    }
+    private void UpdateGreenPos()
+    {
+        greenswirl.transform.position = orbCastingPos.position;
+
+    }
+    public void SpawnGreenPillar()
+    {
+        spellActivationBehaviour.SpellDistCal(GreenPillar, false);
+    }
     public void CastGreen()
     {
         spellActivationBehaviour.SpellDistCal(GreenSpell, false);
+        spellActivationBehaviour.SpellDistCal(GreenShockwave, false);
     }
 
 }

@@ -50,7 +50,7 @@ public class SpellActivationBehaviour : MonoBehaviour
     void Update()
     {
         _pos = _spawnPos.position;
-       // Debug.DrawRay(castingPos.position, _targetPos.position - castingPos.position * Mathf.Infinity, Color.magenta);
+        // Debug.DrawRay(castingPos.position, _targetPos.position - castingPos.position * Mathf.Infinity, Color.magenta);
 
     }
     public void ChangeSpell(InputAction.CallbackContext ctx)
@@ -122,7 +122,7 @@ public class SpellActivationBehaviour : MonoBehaviour
 
         dir = _targetPos.position - castingPos.position;
         localDir = _targetPos.position - transform.position;
-       
+
 
         if (collCheck)
         {
@@ -132,7 +132,7 @@ public class SpellActivationBehaviour : MonoBehaviour
                 Debug.DrawRay(castingPos.position, dir * hit.distance, Color.magenta);
                 Debug.Log(hit.transform.name);
                 hitPoint = hit.point;
-                
+
             }
             else
             {
@@ -149,12 +149,19 @@ public class SpellActivationBehaviour : MonoBehaviour
         {
             hitPoint = _targetPos.position;
             g = Instantiate(spell, hitPoint, Quaternion.identity, null);
+            if (g.GetComponent<GenericSpellBehaviour>() != null)
+            {
 
-            g.GetComponent<GenericSpellBehaviour>().GetData(dir, hitPoint, castingPos, transform);
+                g.GetComponent<GenericSpellBehaviour>().GetData(dir, hitPoint, castingPos, transform);
+            }
+            else
+            {
+                Destroy(g, 1.5f);
+            }
 
             //instantiate on target pos
         }
- 
+
     }
 
 }
