@@ -2053,7 +2053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 104565599603434570, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: timeSprint
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3682665380491898975, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: m_Name
@@ -2780,6 +2780,10 @@ PrefabInstance:
       propertyPath: 'goals.Array.data[3]'
       value: 
       objectReference: {fileID: 582054306}
+    - target: {fileID: 1906011425232209281, guid: 0098dbe29c99cca45b993beb1b086836, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5781781572544210753, guid: 0098dbe29c99cca45b993beb1b086836, type: 3}
       propertyPath: m_Name
       value: Guard_Small 1
