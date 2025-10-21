@@ -27,6 +27,9 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     [Header("Lightning spell")]
     [SerializeField] private GameObject Lightning;
+    [SerializeField] private GameObject LightningAttractor;
+    [SerializeField] private GameObject LightningBall;
+
 
     [Header("Green")]
     [SerializeField] private GameObject GreenSpell;
@@ -111,9 +114,28 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     public void CastLightningSpell()
     {
+        Destroy(LightningBallInstance);
         //   Debug.Log(Lightning);
         spellActivationBehaviour.SpellDistCal(Lightning, true);
     }
+    public void SpawnLightningAttractor()
+    {
+        LightningAttractor.SetActive(true);
+        LightningAttractor.transform.parent = transform.parent;
+        LightningAttractor.transform.localPosition = Vector3.zero;
+
+    }
+
+    GameObject LightningBallInstance;
+    public void SpawnElecticBall()
+    {
+        LightningAttractor.transform.parent = null;
+        // LightningAttractor.transform.position = Vector3.zero;
+        LightningAttractor.SetActive(false);
+        LightningBallInstance = Instantiate(LightningBall, staffCastingPos.position, Quaternion.identity, staffCastingPos);
+
+    }
+
     public void CastBOS()
     {
         spellActivationBehaviour.SpellDistCal(BOS, false);
