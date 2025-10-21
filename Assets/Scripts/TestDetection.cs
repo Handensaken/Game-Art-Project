@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class TestDetection : MonoBehaviour
 {
+    [SerializeField] private AiMovement aiMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +24,7 @@ public class TestDetection : MonoBehaviour
             if (playerDetecton < detectionTime / 4 && wasDetected)
             {
                 wasDetected = false;
-                GetComponent<AiMovement>().TargetLost();
+                aiMovement.TargetLost();
                 Debug.Log("No Longer detecting player");
             }
         }
@@ -39,7 +41,7 @@ public class TestDetection : MonoBehaviour
             detecting = false;
             if (playerDetecton > 0)
             {
-                GetComponent<AiMovement>().TargetLost();
+                aiMovement.TargetLost();
             }
             ObscuringObject = other;
             playerDetecton = 0;
@@ -54,7 +56,7 @@ public class TestDetection : MonoBehaviour
             if (playerDetecton >= detectionTime)
             {
                 wasDetected = true;
-                GetComponent<AiMovement>().StartChasing(other.transform);
+                aiMovement.StartChasing(other.transform);
                 Debug.Log("Player Was detected");
             }
             else
@@ -73,7 +75,7 @@ public class TestDetection : MonoBehaviour
             if (playerDetecton < detectionTime / 4)
             {
 
-                GetComponent<AiMovement>().TargetLost();
+             aiMovement.TargetLost();
                 Debug.Log("No Longer detecting player");
             }
             // playerDetecton = 0;
