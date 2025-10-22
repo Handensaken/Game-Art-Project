@@ -17,7 +17,7 @@ public class TestDetection : MonoBehaviour
         {
             if (playerDetecton > 0)
             {
-                playerDetecton -= Time.deltaTime;
+                playerDetecton -= Time.deltaTime/2;
             }
             if (playerDetecton < 0) playerDetecton = 0;
 
@@ -25,7 +25,7 @@ public class TestDetection : MonoBehaviour
             {
                 wasDetected = false;
                 aiMovement.TargetLost();
-                Debug.Log("No Longer detecting player");
+                //Debug.Log("No Longer detecting player");
             }
         }
     }
@@ -53,11 +53,11 @@ public class TestDetection : MonoBehaviour
             detecting = true;
             //  Debug.Log("Detecting");
 
-            if (playerDetecton >= detectionTime)
+            if (playerDetecton >= detectionTime && !wasDetected)
             {
                 wasDetected = true;
                 aiMovement.StartChasing(other.transform);
-                Debug.Log("Player Was detected");
+              //  Debug.Log("Player Was detected");
             }
             else
             {
@@ -76,7 +76,7 @@ public class TestDetection : MonoBehaviour
             {
 
              aiMovement.TargetLost();
-                Debug.Log("No Longer detecting player");
+            //    Debug.Log("No Longer detecting player");
             }
             // playerDetecton = 0;
         }
