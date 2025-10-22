@@ -74,11 +74,15 @@ public class SpellActivationBehaviour : MonoBehaviour
     {
         _activeSpell = spell;
     }
+    [SerializeField][Tooltip("True: Manually placed target | False: Target snaps back to player pos")] private bool retainTargetPosition = false;
     public void CastSpell(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
         {
-            _targetPos.position = transform.position;
+            if (!retainTargetPosition)
+            {
+                _targetPos.position = transform.position;
+            }
             _targetPos.gameObject.SetActive(true);
             _casting = true;
             //            _activeSpell.CastSpell(transform);
