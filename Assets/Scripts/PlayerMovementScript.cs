@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -90,6 +92,7 @@ public class PlayerMovementScript : MonoBehaviour
 
             sprintT = 0;
             activeSpeed = _runSpeed;
+
         }
         if (f < 0.5f)
         {
@@ -108,6 +111,26 @@ public class PlayerMovementScript : MonoBehaviour
         }
         animCTRL.SetFloat("Blend", f);
         //        Debug.Log(f);
+
+        /* if (ActiveMovement != TrueMovement)
+         {
+             timingTest -= Time.deltaTime;
+             if (timingTest < 0) timingTest = 0;
+             if (ActiveMovement == Vector3.zero) timingTest = 1;
+         }
+         else
+         {
+             timingTest = 1;
+         }
+         Debug.Log(timingTest);*/
+        if (sprinting)
+        {
+            if(lerpT < 0.8)
+            {
+                animCTRL.SetTrigger("Stop");
+                sprinting = false;
+            }
+        }
     }
 
     //Interpolation coroutine. Don't touch 
@@ -118,6 +141,8 @@ public class PlayerMovementScript : MonoBehaviour
             while (lerpT < targetValue)
             {
                 yield return new WaitForSeconds(totalTime / 10);
+
+
                 lerpT += 0.1f;
             }
         }
@@ -159,6 +184,9 @@ public class PlayerMovementScript : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(LerpTimer(1, _startInterpolationSpeed));
+            //Debug.Log("started");
+                sprinting = false;
+
         }
         if (context.canceled)
         {
@@ -166,6 +194,11 @@ public class PlayerMovementScript : MonoBehaviour
             if (activeSpeed == _sprintSpeed)
             {
                 StartCoroutine(LerpTimer(0, 0.5f));
+                //Stop
+                sprinting = true;
+                
+                
+
 
             }
             else
@@ -177,6 +210,10 @@ public class PlayerMovementScript : MonoBehaviour
         else
         {
             _movementDir = context.ReadValue<Vector2>();
+
         }
+
     }
+    bool sprinting;
+    float timingTest = 1;
 }
