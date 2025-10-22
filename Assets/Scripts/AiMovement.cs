@@ -19,14 +19,15 @@ public class AiMovement : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("walk", true);
 
         if (ShouldPathfind)
         {
+            anim.SetBool("walk", true);
 
             agent = GetComponent<NavMeshAgent>();
             agent.destination = goals[index].position;
         }
+    
     }
     private Transform chaseTarget;
     public void StartChasing(Transform t)
@@ -101,7 +102,7 @@ public class AiMovement : MonoBehaviour
             }
             else
             {
-                agent.speed = 5;
+                agent.speed = 10;
                 agent.destination = chaseTarget.position;
             }
         }

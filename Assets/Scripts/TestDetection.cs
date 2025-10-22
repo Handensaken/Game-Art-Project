@@ -1,9 +1,15 @@
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.Animations;
-
+using UnityEngine.UI;
 public class TestDetection : MonoBehaviour
 {
     [SerializeField] private AiMovement aiMovement;
+
+    [SerializeField] private Image fillImage;
+
+    [SerializeField] private GameObject canvas;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,22 +23,33 @@ public class TestDetection : MonoBehaviour
         {
             if (playerDetecton > 0)
             {
-                playerDetecton -= Time.deltaTime/2;
+                playerDetecton -= Time.deltaTime / 2;
             }
-            if (playerDetecton < 0) playerDetecton = 0;
-
+            if (playerDetecton <= 0)
+            {
+                playerDetecton = 0;
+                canvas.SetActive(false);
+            }
             if (playerDetecton < detectionTime / 4 && wasDetected)
             {
                 wasDetected = false;
                 aiMovement.TargetLost();
                 //Debug.Log("No Longer detecting player");
             }
+
+
         }
+        else
+        {
+                canvas.SetActive(true);
+        }
+        
+        fillImage.fillAmount = playerDetecton;
     }
     bool detecting;
     bool wasDetected;
     float playerDetecton = 0;
-    float detectionTime = 2;
+    float detectionTime = 1;
     Collider ObscuringObject;
     void OnTriggerStay(Collider other)
     {
@@ -61,7 +78,7 @@ public class TestDetection : MonoBehaviour
             }
             else
             {
-                playerDetecton += Time.deltaTime;
+                playerDetecton += Time.deltaTime/2;
             }
         }
         ObscuringObject = null;
