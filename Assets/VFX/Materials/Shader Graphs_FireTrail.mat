@@ -59,9 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScollSpeed: -100
+    - _ScollSpeed: -2
     m_Colors:
     - _PrimaryColor: {r: 3.0943396, g: 0.49797076, b: 0, a: 0}
     - _SecondaryColor: {r: 2.5722487, g: 0.86823326, b: 0, a: 0}

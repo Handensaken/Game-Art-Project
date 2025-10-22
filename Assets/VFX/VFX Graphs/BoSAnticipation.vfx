@@ -236,9 +236,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -1377
-    y: -721
+    y: -844
     width: 3357
-    height: 3313
+    height: 3435
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5529,7 +5529,7 @@ MonoBehaviour:
     - rid: 1001
       type: {class: ParticleShadingShaderGraph, ns: UnityEditor.VFX, asm: Unity.VisualEffectGraph.Editor}
       data:
-        shaderGraph: {fileID: 4333940904281232215, guid: 19106125f5513954cac6c16c0ac06a02, type: 3}
+        shaderGraph: {fileID: 4333940904281232215, guid: 4429f89733450a54ca248ac7561e99d7, type: 3}
         materialSettings:
           m_PropertyNames: []
           m_PropertyValues: []
@@ -6905,7 +6905,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -105, y: -571}
+  m_UIPosition: {x: -97, y: -844}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -7031,7 +7031,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
+      m_SerializableObject: False
     m_Space: -1
   m_Property:
     name: _vfx_enabled

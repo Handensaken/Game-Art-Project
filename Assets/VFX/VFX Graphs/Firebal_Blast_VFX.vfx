@@ -165,9 +165,9 @@ MonoBehaviour:
     position:
       serializedVersion: 2
       x: -945
-      y: -421
+      y: -8
       width: 2868
-      height: 2320
+      height: 1913
     contents:
     - model: {fileID: 8926484042661616362}
       id: 0
@@ -229,12 +229,24 @@ MonoBehaviour:
     - model: {fileID: 8926484042661616596}
       id: 0
       isStickyNote: 0
+    - model: {fileID: 8926484042661616622}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661616625}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661616642}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661616648}
+      id: 0
+      isStickyNote: 0
   - title: Sparks
     position:
       serializedVersion: 2
-      x: -1828
+      x: -1842
       y: 1818
-      width: 1584
+      width: 1598
       height: 3737
     contents:
     - model: {fileID: 8926484042661616657}
@@ -362,7 +374,7 @@ MonoBehaviour:
       x: -202
       y: 1871
       width: 2005
-      height: 2227
+      height: 2226
     contents:
     - model: {fileID: 8926484042661617239}
       id: 0
@@ -918,6 +930,7 @@ MonoBehaviour:
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
+  - {fileID: 8926484042661617756}
   - {fileID: 8926484042661614776}
   m_OutputSlots: []
   m_Label: Render Quad
@@ -944,7 +957,7 @@ MonoBehaviour:
   flipbookLayout: 0
   flipbookBlendFrames: 0
   flipbookMotionVectors: 0
-  useSoftParticle: 0
+  useSoftParticle: 1
   vfxSystemSortPriority: 0
   sort: 1
   sortMode: 1
@@ -2867,6 +2880,7 @@ MonoBehaviour:
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
+  - {fileID: 8926484042661617755}
   - {fileID: 8926484042661615029}
   m_OutputSlots: []
   m_Label: Render Quad
@@ -2892,7 +2906,7 @@ MonoBehaviour:
   flipbookLayout: 0
   flipbookBlendFrames: 0
   flipbookMotionVectors: 0
-  useSoftParticle: 0
+  useSoftParticle: 1
   vfxSystemSortPriority: 4
   sort: 1
   sortMode: 1
@@ -19850,7 +19864,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615993}
   - {fileID: 8926484042661616015}
   - {fileID: 8926484042661615996}
-  m_UIPosition: {x: -3468, y: 1164}
+  m_UIPosition: {x: -3468, y: 1165}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -26201,7 +26215,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661616536}
-  m_UIPosition: {x: 106, y: 323}
+  m_UIPosition: {x: 106, y: 253}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -29259,7 +29273,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661616622}
   - {fileID: 8926484042661616625}
-  m_UIPosition: {x: 824, y: -31}
+  m_UIPosition: {x: 810, y: 685}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -29955,7 +29969,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 807, y: 395}
+  m_UIPosition: {x: 793, y: 1111}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -29991,7 +30005,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661616642}
-  m_UIPosition: {x: 838, y: 633}
+  m_UIPosition: {x: 824, y: 1349}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -30498,7 +30512,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661616648}
-  m_UIPosition: {x: 824, y: -363}
+  m_UIPosition: {x: 824, y: 290}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -30681,7 +30695,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 597, y: 881}
+  m_UIPosition: {x: 583, y: 1597}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -36652,7 +36666,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -1803, y: 1958}
+  m_UIPosition: {x: -1817, y: 2043}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -42416,7 +42430,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 756, y: 1956}
+  m_UIPosition: {x: 770, y: 1930}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -46986,3 +47000,71 @@ MonoBehaviour:
   m_LinkedSlots:
   - {fileID: 8926484042661617747}
   - {fileID: 8926484042661617748}
+--- !u!114 &8926484042661617755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661617755}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615028}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: -1
+  m_Property:
+    name: softParticleFadeDistance
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661617756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661617756}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614775}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: -1
+  m_Property:
+    name: softParticleFadeDistance
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []

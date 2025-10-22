@@ -38,7 +38,7 @@ public class ElectricArcChildPositioning : GenericSpellBehaviour
           childObjects[3].position = Vector3.Lerp(spellOrigin.position, d + spellDir.normalized * f, fd);*/
 
         fd += Time.deltaTime;
-        if (fd > 3)
+        if (fd > 1)
         {
             Destroy(oldChild);
             Destroy(gameObject);

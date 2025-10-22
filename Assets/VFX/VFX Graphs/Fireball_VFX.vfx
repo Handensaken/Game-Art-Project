@@ -31,10 +31,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -167
+    x: -256
     y: 377
-    width: 4427
-    height: 2121
+    width: 4517
+    height: 2097
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1756,7 +1756,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615006}
       inputSlot: {fileID: 8926484042661614993}
-    position: {x: -166.66667, y: 1470.6666}
+    position: {x: -256, y: 1493.3333}
     expandedSlots:
     - {fileID: 8926484042661615006}
     expanded: 1
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615018}
   - {fileID: 8926484042661615020}
   - {fileID: 8926484042661615023}
-  m_UIPosition: {x: 422, y: 1353}
+  m_UIPosition: {x: 423, y: 1379}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -12732,7 +12732,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
+      m_SerializableObject: False
     m_Space: -1
   m_Property:
     name: _vfx_enabled
