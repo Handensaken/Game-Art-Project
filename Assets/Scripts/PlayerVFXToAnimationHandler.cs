@@ -42,6 +42,7 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
 
     [Header("Balls of steel")]
     [SerializeField] private GameObject BOS;
+    [SerializeField] private VisualEffect BOSSwirl;
 
 
 
@@ -140,7 +141,18 @@ public class PlayerVFXToAnimationHandler : MonoBehaviour
     {
         spellActivationBehaviour.SpellDistCal(BOS, false);
     }
-
+    public void StartBOSAntic()
+    {
+        BOSSwirl.enabled = true;
+    }
+    public void BOSAnticImpact()
+    {
+        BOSSwirl.SendEvent(Shader.PropertyToID("BosStopSwirl"));
+    }
+    public void BOSReset()
+    {
+        BOSSwirl.enabled = false;
+    }
 
     GameObject greenswirl;
     public void SpawnGreenSwirl()
