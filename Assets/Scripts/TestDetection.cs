@@ -9,6 +9,8 @@ public class TestDetection : MonoBehaviour
     [SerializeField] private Image fillImage;
 
     [SerializeField] private GameObject canvas;
+
+    [SerializeField] private Animator canvasAnim;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,6 +76,7 @@ public class TestDetection : MonoBehaviour
             {
                 wasDetected = true;
                 aiMovement.StartChasing(other.transform);
+                canvasAnim.SetTrigger("Alert");
               //  Debug.Log("Player Was detected");
             }
             else
