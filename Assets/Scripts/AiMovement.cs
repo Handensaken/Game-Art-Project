@@ -13,9 +13,14 @@ public class AiMovement : MonoBehaviour
 
     public bool chasing;
     private int index = 0;
+
+    private Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetBool("walk", true);
+
         if (ShouldPathfind)
         {
 
@@ -26,10 +31,23 @@ public class AiMovement : MonoBehaviour
     private Transform chaseTarget;
     public void StartChasing(Transform t)
     {
-        agent.isStopped = false;
-
+        agent.isStopped = true;
+        anim.SetTrigger("Alert");
+        Debug.Log("starting chase");
+        // anim.SetBool("walk", false);
+        StopAllCoroutines();
+        StartCoroutine(alertTiming());
         chasing = true;
         chaseTarget = t;
+    }
+
+    public float alertAnimDuration = 1;
+    private IEnumerator alertTiming()
+    {
+        anim.SetBool("walk", false);
+        anim.SetBool("run", true);
+        yield return new WaitForSeconds(alertAnimDuration);
+        agent.isStopped = false;
     }
     public void TargetLost()
     {
@@ -47,6 +65,8 @@ public class AiMovement : MonoBehaviour
         index = Array.IndexOf(goals, closestPoint);
         chasing = false;
         agent.destination = goals[index].position;
+        anim.SetBool("walk", true);
+        anim.SetBool("run", false);
         Debug.Log("Target Lost");
     }
     // Update is called once per frame
@@ -76,9 +96,12 @@ public class AiMovement : MonoBehaviour
                     StartCoroutine(setNewPos(goals[fuck].GetComponent<AIPos>().MoveDelay));
 
                 }
+
+                agent.speed = 3.5f;
             }
             else
             {
+                agent.speed = 5;
                 agent.destination = chaseTarget.position;
             }
         }
@@ -86,10 +109,12 @@ public class AiMovement : MonoBehaviour
     private IEnumerator setNewPos(float delay)
     {
         agent.isStopped = true;
+        anim.SetBool("walk", false);
         agent.destination = goals[index].position;
         //Set idle
         yield return new WaitForSeconds(delay);
         agent.isStopped = false;
+        anim.SetBool("walk", true);
         //Set run
     }
 }
