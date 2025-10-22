@@ -134,15 +134,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6221974
+      value: 2.0538616
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.26000023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.685442
+      value: 2.43161
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 783917011d3eea14e828c44b4b82faba, type: 2}
+    - target: {fileID: 2972885401145300184, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4522807429685563982, guid: 219c7eabacdfa5447bea8c584dceb5f5, type: 3}
     - target: {fileID: 2972885401145300184, guid: 0c1626b22827ad847ab29a99a03ad00a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -275,6 +279,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   chasing: 0
+  alertAnimDuration: 1
 --- !u!54 &1143063254838286323
 Rigidbody:
   m_ObjectHideFlags: 0
