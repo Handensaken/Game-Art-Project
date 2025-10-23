@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldPathfind: 1
+  agentSpeedWalk: 3.5
   goals:
   - {fileID: 0}
   - {fileID: 0}
@@ -583,6 +584,7 @@ MonoBehaviour:
   aiMovement: {fileID: 699353844613803773}
   fillImage: {fileID: 7561657784843621025}
   canvas: {fileID: 7937611303142382247}
+  canvasAnim: {fileID: 0}
 --- !u!64 &3171026858941321340
 MeshCollider:
   m_ObjectHideFlags: 0

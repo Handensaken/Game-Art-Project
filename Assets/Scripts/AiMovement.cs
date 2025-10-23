@@ -9,6 +9,7 @@ public class AiMovement : MonoBehaviour
     [SerializeField] private bool ShouldPathfind;
 
     NavMeshAgent agent;
+    public float agentSpeedWalk = 3.5f;
     public Transform[] goals;
 
     public bool chasing;
@@ -98,7 +99,7 @@ public class AiMovement : MonoBehaviour
 
                 }
 
-                agent.speed = 3.5f;
+                agent.speed = agentSpeedWalk;
             }
             else
             {
