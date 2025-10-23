@@ -1425,7 +1425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 699353844613803773, guid: a679d6a643ab696468bb32c34974d627, type: 3}
       propertyPath: agentSpeedWalk
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 699353844613803773, guid: a679d6a643ab696468bb32c34974d627, type: 3}
       propertyPath: goals.Array.size
@@ -1433,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 699353844613803773, guid: a679d6a643ab696468bb32c34974d627, type: 3}
       propertyPath: alertAnimDuration
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 699353844613803773, guid: a679d6a643ab696468bb32c34974d627, type: 3}
       propertyPath: 'goals.Array.data[0]'
@@ -5379,13 +5379,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 599222752932501172, guid: b59c86b225889ca43b10304b383c149c, type: 3}
+      propertyPath: MoveDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3095321099540649033, guid: b59c86b225889ca43b10304b383c149c, type: 3}
       propertyPath: m_Name
       value: AI Pathing Pos (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3256647912062040709, guid: b59c86b225889ca43b10304b383c149c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.47
+      value: -10.92
       objectReference: {fileID: 0}
     - target: {fileID: 3256647912062040709, guid: b59c86b225889ca43b10304b383c149c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5393,7 +5397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3256647912062040709, guid: b59c86b225889ca43b10304b383c149c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.86
+      value: -17.45
       objectReference: {fileID: 0}
     - target: {fileID: 3256647912062040709, guid: b59c86b225889ca43b10304b383c149c, type: 3}
       propertyPath: m_LocalRotation.w
