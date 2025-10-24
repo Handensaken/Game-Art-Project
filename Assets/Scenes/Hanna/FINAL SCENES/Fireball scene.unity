@@ -3182,9 +3182,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player01Container
       objectReference: {fileID: 0}
+    - target: {fileID: 3682665380491898975, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3796146256743526409, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4087994442973614558, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3240,7 +3244,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8bbc615aef49c8140b4a203d1a52fdf1, type: 2}
     - target: {fileID: 7610924834291055925, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8857834741663508311, guid: d14df3005fe1af949bac68e9f068c8ca, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
