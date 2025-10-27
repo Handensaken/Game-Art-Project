@@ -98,6 +98,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             sprintT = 0;
             animCTRL.SetBool("Sprint", false);
+            sprinting = false;
         }
         if (f > 0.1f)
         {
@@ -123,7 +124,8 @@ public class PlayerMovementScript : MonoBehaviour
              timingTest = 1;
          }
          Debug.Log(timingTest);*/
-        if (sprinting)
+         
+        if (sprinting && !GetComponent<PlayerCollisionBehaviour>().collided)
         {
             if(lerpT < 0.8)
             {
