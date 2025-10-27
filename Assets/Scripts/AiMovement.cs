@@ -103,7 +103,7 @@ public class AiMovement : MonoBehaviour
             }
             else
             {
-                agent.speed = 10;
+                agent.speed = 14;
                 agent.destination = chaseTarget.position;
             }
         }
