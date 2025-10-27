@@ -57,7 +57,7 @@ public class FireballBehaviour : GenericSpellBehaviour
         while (t < 0.5f)
         {
             yield return new WaitForSeconds(0.001f);
-            t += 0.01f;
+            t += 0.1f;
             transform.GetChild(0).localScale = Vector3.Lerp(aaa, new Vector3(0f, 0f, 0f), t);
             transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
