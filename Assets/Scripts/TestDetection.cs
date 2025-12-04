@@ -75,8 +75,8 @@ public class TestDetection : MonoBehaviour
             if (playerDetecton >= detectionTime && !wasDetected)
             {
                 wasDetected = true;
-                aiMovement.StartChasing(other.transform);
                 canvasAnim.SetTrigger("Alert");
+                aiMovement.StartChasing(other.transform);
               //  Debug.Log("Player Was detected");
             }
             else

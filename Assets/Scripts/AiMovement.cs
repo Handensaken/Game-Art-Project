@@ -33,14 +33,14 @@ public class AiMovement : MonoBehaviour
     private Transform chaseTarget;
     public void StartChasing(Transform t)
     {
-        agent.isStopped = true;
         anim.SetTrigger("Alert");
+        //agent.isStopped = true;
         Debug.Log("starting chase");
         // anim.SetBool("walk", false);
-        StopAllCoroutines();
+        /*StopAllCoroutines();
         StartCoroutine(alertTiming());
         chasing = true;
-        chaseTarget = t;
+        chaseTarget = t;*/
     }
 
     public float alertAnimDuration = 1;

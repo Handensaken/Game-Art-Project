@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 3513783867947763750}
   - component: {fileID: 8589212873517887660}
   - component: {fileID: 8748409588383955032}
+  - component: {fileID: 1818519845457190098}
   m_Layer: 0
   m_Name: GuardWSCanvas
   m_TagString: Untagged
@@ -266,6 +267,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe279960babbdf040b30fddd4364a15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1818519845457190098
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937611303142382247}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d31e088f40675794cae9956c4953c268, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1655674229154852472
 PrefabInstance:
   m_ObjectHideFlags: 0
